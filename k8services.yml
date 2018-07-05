@@ -1,0 +1,9 @@
+- name: Sample
+  hosts: all
+  tasks: 
+	- name: Get a list of all service objects
+	  k8s_raw:
+	    api_version: v1
+	    kind: ServiceList
+	    namespace: testing
+	  register: service_list
