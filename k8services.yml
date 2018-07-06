@@ -27,3 +27,4 @@
         name: kubectl
         enablerepo: "kubernetes"
         state: present
+    - debug: msg="{{ result.stdout }}"
