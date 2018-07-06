@@ -7,22 +7,8 @@
       yum:
         name: epel-release
         state: present
-        
+
     - name: Install Kubectl
       yum:
         name: kubectl
         state: present
-
-#     - name: Install nginx
-#       yum:
-#         name: nginx
-#         state: present
-
-#     - name: Remove nginx
-#       yum:
-#         name: nginx
-#         state: absent
-     - name: Install Kubectl
-       yum:
-         name: kubectl
-         state: present
