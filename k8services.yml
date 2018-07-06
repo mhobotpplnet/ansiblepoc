@@ -7,6 +7,11 @@
       yum:
         name: epel-release
         state: present
+    - name: List ansible packages and register result to print with debug later.
+      yum:
+        list: ansible
+      register: result
+      
     - name: Add K8 Repo
       yum_repository:
         name: kubernetes
@@ -18,4 +23,5 @@
     - name: Install Kubectl
       yum:
         name: kubectl
+        enablerepo: "kubernetes"
         state: present
