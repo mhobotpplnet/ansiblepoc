@@ -1,13 +1,23 @@
 ---
-- name: date
-  hosts: all
+# - name: date
+#   hosts: all
 
-  tasks:
+#   tasks:
 
-  - name: date
-#    shell: kubectl run test --rm --requests="cpu=500m,memory=512Mi" --limits="cpu=500m,memory=512Mi" -n sandbox --restart=Never -it --image=alpine date
-    shell: kubectl get pods --all-namespaces
-    register: out
+#   - name: date
+# #    shell: kubectl run test --rm --requests="cpu=500m,memory=512Mi" --limits="cpu=500m,memory=512Mi" -n sandbox --restart=Never -it --image=alpine date
+#     shell: kubectl get pods --all-namespaces
+#     register: out
 
-#  - debug: var=out.stdout_lines
-  - debug: msg="{{ out.stdout }}"
+# #  - debug: var=out.stdout_lines
+#   - debug: msg="{{ out.stdout }}"
+
+- name: install the latest version of Apache
+  yum:
+    name: httpd
+    state: latest
+
+- name: remove the Apache package
+  yum:
+    name: httpd
+    state: absent
