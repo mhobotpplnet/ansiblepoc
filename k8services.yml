@@ -9,10 +9,10 @@
 #    shell: kubectl get pods --all-namespaces
     shell:  kubectl get pods --all-namespaces
 
-  - name: Hello World!
-    hosts: all
+#   - name: Hello World!
+#     hosts: all
 
-    tasks:
+#     tasks:
 
-    - name: Hello World!
-      shell: echo "Hi! Tower is working!"
+#     - name: Hello World!
+#       shell: echo "Hi! Tower is working!"
