@@ -15,6 +15,7 @@
     - name: Add K8 Repo
       yum_repository:
         name: kubernetes
+        become: yes
         description: Some YUM repo
         baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
         gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
