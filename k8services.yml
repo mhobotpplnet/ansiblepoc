@@ -2,7 +2,7 @@
 - name: Shelling
   hosts: all
 
-#   tasks:
+   tasks:
 #     - name: Add epel-release repo
 #       yum:
 #         name: epel-release
