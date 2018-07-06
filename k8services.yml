@@ -20,12 +20,10 @@
         gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
         gpgcheck: yes
         repo_gpgcheck: yes
-
+    - debug: msg="{{ result.stdout }}"
 #     - name: Install Kubectl
 #       yum:
 #         name: kubectl
 #         enablerepo: "kubernetes"
 #         state: present
 #       register: k8result
-    - debug: msg="{{ result.stdout }}"
-#    - debug: msg="{{ k8result.stdout }}"
