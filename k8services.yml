@@ -2,15 +2,15 @@
 - name: Shelling
   hosts: all
 
-  tasks:
-    - name: Add epel-release repo
-      yum:
-        name: epel-release
-        state: present
-    - name: List ansible packages and register result to print with debug later.
-      yum:
-        list: ansible
-      register: result
+#   tasks:
+#     - name: Add epel-release repo
+#       yum:
+#         name: epel-release
+#         state: present
+#     - name: List ansible packages and register result to print with debug later.
+#       yum:
+#         list: ansible
+#       register: result
       
     - name: Add K8 Repo
       yum_repository:
