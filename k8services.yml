@@ -2,7 +2,7 @@
 - name: Adding Kops and Kubectl
   hosts: all
   roles:
-    - dfarrell07.opendaylight
+    - andrewrothstein.kubectl
 
   tasks:
 #     - name: Add epel-release repo
