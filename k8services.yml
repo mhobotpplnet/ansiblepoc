@@ -1,10 +1,10 @@
 ---
-- name: date
+- name: Shelling
   hosts: all
 
   tasks:
 
-  - name: date
+  - name: Shelling
 #    shell: kubectl run test --rm --requests="cpu=500m,memory=512Mi" --limits="cpu=500m,memory=512Mi" -n sandbox --restart=Never -it --image=alpine date
 #    shell: kubectl get pods --all-namespaces
     shell:  kubectl get pods --all-namespaces
