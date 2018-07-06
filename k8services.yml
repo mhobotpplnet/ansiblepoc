@@ -1,5 +1,5 @@
 ---
-- name: Shelling
+- name: Adding Kops and Kubectl
   hosts: all
 
   tasks:
