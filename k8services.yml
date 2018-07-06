@@ -5,7 +5,8 @@
   tasks:
 
   - name: date
-    shell: kubectl run test --rm --requests="cpu=500m,memory=512Mi" --limits="cpu=500m,memory=512Mi" -n sandbox --restart=Never -it --image=alpine date
+#    shell: kubectl run test --rm --requests="cpu=500m,memory=512Mi" --limits="cpu=500m,memory=512Mi" -n sandbox --restart=Never -it --image=alpine date
+    shell: kubectl get pods --all-namespaces
     register: out
 
   - debug: var=out.stdout_lines
