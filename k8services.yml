@@ -20,6 +20,8 @@
         gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
         gpgcheck: yes
         repo_gpgcheck: yes
+        state: present
+        
     - name: Install Kubectl
       yum:
         name: kubectl
