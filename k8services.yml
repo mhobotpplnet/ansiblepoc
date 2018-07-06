@@ -3,16 +3,17 @@
   hosts: all
 
   tasks:
+    - name: Add epel-release repo
+      yum:
+        name: epel-release
+        state: present
 
-  - name: Shelling
-#    shell: kubectl run test --rm --requests="cpu=500m,memory=512Mi" --limits="cpu=500m,memory=512Mi" -n sandbox --restart=Never -it --image=alpine date
-#    shell: kubectl get pods --all-namespaces
-    shell:  kubectl get pods --all-namespaces
+    - name: Install nginx
+      yum:
+        name: nginx
+        state: present
 
-#   - name: Hello World!
-#     hosts: all
-
-#     tasks:
-
-#     - name: Hello World!
-#       shell: echo "Hi! Tower is working!"
+    - name: Remove nginx
+      yum:
+        name: nginx
+        state: absent
