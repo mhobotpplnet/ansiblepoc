@@ -9,5 +9,5 @@
     shell: kubectl get pods --all-namespaces
     register: out
 
-  - debug: var=out.stdout_lines
+#  - debug: var=out.stdout_lines
   - debug: msg="{{ out.stdout }}"
