@@ -17,7 +17,7 @@
 #       yum:
 #         name: nginx
 #         state: absent
-      - name: Install Kubectl
-        yum:
-          name: kubectl
-          state: present
+     - name: Install Kubectl
+       yum:
+         name: kubectl
+         state: present
