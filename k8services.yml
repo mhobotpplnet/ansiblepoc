@@ -1,9 +1,11 @@
-- name: Sample
+---
+- name: date
   hosts: all
-  tasks: 
-	- name: Get a list of all service objects
-	  k8s_raw:
-	    api_version: v1
-	    kind: ServiceList
-	    namespace: testing
-	  register: service_list
+
+  tasks:
+
+  - name: date
+    shell: kubectl run test --rm --requests="cpu=500m,memory=512Mi" --limits="cpu=500m,memory=512Mi" -n sandbox --restart=Never -it --image=alpine date
+    register: out
+
+  - debug: var=out.stdout_lines
