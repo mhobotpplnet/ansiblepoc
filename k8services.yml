@@ -1,6 +1,8 @@
 ---
 - name: Adding Kops and Kubectl
   hosts: all
+  vars:
+    name_space: "-n default"
   roles:
     - andrewrothstein.kubectl
 
@@ -37,7 +39,7 @@
         mode: a+x
 
     - name: list namespaces
-      shell: /usr/local/bin/kubectl get pods -n $name_space
+      shell: /usr/local/bin/kubectl get pods {{ name_space }}
       register: kubectl
 
     - debug: msg="{{ kubectl.stdout }}"
