@@ -37,7 +37,7 @@
         mode: a+x
 
     - name: list namespaces
-      shell: /usr/local/bin/kubectl get pods
+      shell: /usr/local/bin/kubectl get pods -n $name_space
       register: kubectl
 
     - debug: msg="{{ kubectl.stdout }}"
