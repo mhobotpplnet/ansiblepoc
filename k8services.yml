@@ -40,7 +40,7 @@
       shell: /usr/local/bin/kubectl get pods
       register: kubectl
 
-- debug: msg="{{ kubectl.stdout }}"
+    - debug: msg="{{ kubectl.stdout }}"
 
-- debug: msg="{{ kubectl.stderr }}"
+    - debug: msg="{{ kubectl.stderr }}"
 
