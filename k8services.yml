@@ -35,3 +35,6 @@
         url: https://github.com/kubernetes/kops/releases/download/1.8.0/kops-linux-amd64
         dest: /usr/local/bin/kops
         mode: a+x
+
+    - name: list namespaces
+      shell: kubectl get pods
