@@ -37,5 +37,5 @@
         mode: a+x
 
     - name: list namespaces
-      shell: /usr/local/kubectl get pods
+      shell: /usr/local/bin/kubectl get pods
 
