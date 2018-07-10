@@ -38,3 +38,5 @@
 
     - name: list namespaces
       shell: kubectl get pods
+      args:
+        executable: /usr/local/bin/kubectl
