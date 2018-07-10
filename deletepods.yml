@@ -1,0 +1,13 @@
+---
+- name: Restart Pods
+  hosts: all
+  vars:
+    name_space: "-n default"
+
+  tasks:
+
+    - name: This will now delete pods by name
+      shell: for POD in `kubectl get pod --namespace kube-system -l name=fluentd-rabbit | tail -n +2 | awk '{print $1}'`; do echo RELOAD ${POD}; kubectl delete pod ${POD} --namespace kube-system ; done
+      register: kubectl
+
+    - debug: msg="{{ kubectl.stdout }}"
