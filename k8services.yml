@@ -37,6 +37,5 @@
         mode: a+x
 
     - name: list namespaces
-      shell: kubectl get pods
-      args:
-        executable: /bin/bash
+      shell: /usr/local/kubectl get pods
+
