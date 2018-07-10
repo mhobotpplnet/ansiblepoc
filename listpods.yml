@@ -1,0 +1,13 @@
+---
+- name: List Namespaces
+  hosts: all
+  vars:
+    name_space: "-n default"
+
+  tasks:
+
+    - name: list namespaces
+      shell: /usr/local/bin/kubectl get pods {{ name_space }}
+      register: kubectl
+
+    - debug: msg="{{ kubectl.stdout }}"
