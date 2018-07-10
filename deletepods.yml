@@ -7,7 +7,7 @@
   tasks:
 
     - name: This will now delete pods by name
-      shell: for POD in `kubectl get pod --namespace kube-system -l name=fluentd-rabbit | tail -n +2 | awk '{print $1}'`; do echo RELOAD ${POD}; kubectl delete pod ${POD} --namespace kube-system ; done
+      shell: for POD in `/usr/local/bin/kubectl get pod --namespace default -l name=fluentd-rabbit | tail -n +2 | awk '{print $1}'`; do echo RELOAD ${POD}; /usr/local/bin/kubectl delete pod ${POD} --namespace default ; done
       register: kubectl
 
     - debug: msg="{{ kubectl.stdout }}"
